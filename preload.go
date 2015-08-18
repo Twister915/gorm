@@ -65,7 +65,7 @@ func Preload(scope *Scope) {
 				case "many_to_many":
 					currentScope.handleHasManyToManyPreload(field, conditions)
 				default:
-					currentScope.Err(errors.New("not supported relation"))
+					currentScope.Err(errors.New(field.Relationship.Kind + " is not supported relation"))
 				}
 				break
 			}
